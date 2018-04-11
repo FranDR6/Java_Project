@@ -1,8 +1,8 @@
 package Sudoku;
 
-public class Numero {
+public class Casilla {
 	private int numero;
-	private int area;
+	private int Area;
 
 	public int getNumero() {
 		return numero;
@@ -13,10 +13,10 @@ public class Numero {
 	}
 
 	public int getArea() {
-		return area;
+		return Area;
 	}
 
 	public void setArea(int area) {
-		this.area = area;
+		this.Area = area;
 	}
 }
