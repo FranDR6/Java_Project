@@ -14,15 +14,29 @@ public class Principal {
 				asignarArea(x, y, sudoku);
 			}
 		}
+		desordenarSudoku(sudoku);
 		for (int i = 0; i < sudoku.length; i++) {
 			System.out.println("");
 			for (int j = 0; j < sudoku.length; j++) {
-				System.out.print(sudoku[i][j].getArea());
-				if (j==2 || j==5) {
+				System.out.print(sudoku[i][j].getNumero());
+				if (j == 2 || j == 5) {
 					System.out.print("\t");
 				}
 			}
 		}
+	}
+
+	private static void desordenarSudoku(Casilla[][] sudoku) {
+		int c, d;
+		for (int a = 0; a < sudoku.length; a++) {
+			for (int b = 0; b < sudoku.length; b++) {
+				do {
+					c = (int) (Math.random() * sudoku.length);
+					d = (int) (Math.random() * sudoku.length);
+				} while (sudoku[c][d].getArea() == sudoku[a][b].getArea());
+			}
+		}
+
 	}
 
 	private static void asignarArea(int x, int y, Casilla[][] sudoku) {
