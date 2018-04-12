@@ -62,15 +62,15 @@ public class Tablero {
 	}
 
 	private void asiganarNumeros(Casilla[][] sudoku) {
+		int[] numeros= {1,2,3,4,5,6,7,8,9};
 		for (int a = 0; a < this.sudoku.length; a++) {
-			for (int b = 0; b < this.sudoku.length; b++) {
-				int intentos = 100;
+			for (int b = 0,intentos=0; b < this.sudoku.length; b++) {
 				do {
-					this.sudoku[a][b].setNumero((int) (Math.random() * 9) + 1);
-					intentos--;
-				} while (validarCasilla(this.sudoku, a, b) == true || intentos > 0);
+					this.sudoku[a][b].setNumero(numeros[(int) (Math.random() * numeros.length) ]);
+					intentos++;
+				} while (validarCasilla(this.sudoku, a, b) == true || intentos > 100);
 				mostrarSudoku(sudoku);
-				System.out.println("▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀");
+				System.out.println("---------------------------------------------");
 			}
 		}
 	}
