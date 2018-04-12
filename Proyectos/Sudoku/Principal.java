@@ -39,6 +39,7 @@ public class Principal {
 	}
 
 	// ---------------------------------------------------------------------------------------------//
+
 	private static void desordenarSudoku(Casilla[][] sudoku) {
 		int c, d;
 		for (int a = 0; a < sudoku.length; a++) {
@@ -56,6 +57,7 @@ public class Principal {
 	}
 
 	// ---------------------------------------------------------------------------------------------//
+
 	private static void asignarArea(int x, int y, Casilla[][] sudoku) {
 		int a = 0;
 		int[][] filas = { { 0, 0, 0, 1, 1, 1, 2, 2, 2 }, { 3, 3, 3, 4, 4, 4, 5, 5, 5 }, { 6, 6, 6, 7, 7, 7, 8, 8, 8 } };
@@ -74,6 +76,7 @@ public class Principal {
 	}
 
 	// ---------------------------------------------------------------------------------------------//
+
 	private static boolean validarTablero(int[][] array) {
 		for (int a = 0; a < array.length; a++) {
 			for (int b = 0; b < array.length; b++) {
@@ -86,6 +89,7 @@ public class Principal {
 	}
 
 	// ---------------------------------------------------------------------------------------------//
+
 	private static boolean comprobarColumnaFila(int[][] array, int a, int b) {
 		for (int e = 0; e < array.length; e++) {
 			if (array[a][b] == array[a][e] && e != b) {
@@ -99,6 +103,7 @@ public class Principal {
 	}
 
 	// ---------------------------------------------------------------------------------------------//
+
 	private static int[][] crearMatriz(int[][][][] array) {
 		int[][] tableroMatriz = new int[array.length * 3][array.length * 3];
 		int e = 0, f = 0;
@@ -136,6 +141,7 @@ public class Principal {
 	}
 
 	// ---------------------------------------------------------------------------------------------//
+
 	private static void desordenarTablero(int[][][][] array) {
 		int contenedor;
 		for (int a = 0; a < array.length; a++) {
@@ -154,6 +160,7 @@ public class Principal {
 	}
 
 	// ---------------------------------------------------------------------------------------------//
+
 	private static void crearTablero(int[][][][] array) {
 		int[] numeros = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 		for (int a = 0; a < array.length; a++) {
@@ -168,20 +175,7 @@ public class Principal {
 	}
 
 	// ---------------------------------------------------------------------------------------------//
-	private static void mostrarMatriz(int[][] matriz) {
-		for (int x = 0; x < matriz.length; x++) {
-			System.out.print(" ");
-			for (int y = 0; y < matriz[x].length; y++) {
-				System.out.print(matriz[x][y]);
-				if (y != matriz[x].length - 1)
-					System.out.print("\t");
-			}
-			System.out.println(" ");
-		}
-	}
 
-	// ---------------------------------------------------------------------------------------------//
-	// ---------------------------------------------------------------------------------------------//
 	private static void mostrarSudoku(Casilla[][] sudoku) {
 		for (int x = 0; x < sudoku.length; x++) {
 			System.out.print(" ");
@@ -193,4 +187,7 @@ public class Principal {
 			System.out.println(" ");
 		}
 	}
+
+	// ---------------------------------------------------------------------------------------------//
+
 }
