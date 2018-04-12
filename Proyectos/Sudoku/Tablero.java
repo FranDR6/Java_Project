@@ -11,7 +11,7 @@ public class Tablero {
 		this.sudoku = sudoku;
 	}
 
-	public Tablero(Casilla[][] sudoku) {
+	public Tablero() {
 		super();
 		for (int x = 0; x < this.sudoku.length; x++) {
 			for (int y = 0; y < this.sudoku.length; y++) {
@@ -21,9 +21,20 @@ public class Tablero {
 		}
 		do {
 			asiganarNumeros(this.sudoku);
+			mostrarSudoku(sudoku);
 		} while (validarSudoku(this.sudoku) == true);
 
-		this.sudoku = sudoku;
+	}
+	private static void mostrarSudoku(Casilla[][] sudoku) {
+		for (int x = 0; x < sudoku.length; x++) {
+			System.out.print(" ");
+			for (int y = 0; y < sudoku[x].length; y++) {
+				System.out.print(sudoku[x][y].getNumero());
+				if (y != sudoku[x].length - 1)
+					System.out.print("\t");
+			}
+			System.out.println(" ");
+		}
 	}
 
 	private static boolean validarSudoku(Casilla[][] sudoku) {
@@ -53,11 +64,13 @@ public class Tablero {
 	private void asiganarNumeros(Casilla[][] sudoku) {
 		for (int a = 0; a < this.sudoku.length; a++) {
 			for (int b = 0; b < this.sudoku.length; b++) {
-				int intentos = 300;
+				int intentos = 100;
 				do {
-					this.sudoku[a][b].setNumero((int) (Math.random() * 8) + 1);
+					this.sudoku[a][b].setNumero((int) (Math.random() * 9) + 1);
 					intentos--;
 				} while (validarCasilla(this.sudoku, a, b) == true || intentos > 0);
+				mostrarSudoku(sudoku);
+				System.out.println("▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀");
 			}
 		}
 	}
