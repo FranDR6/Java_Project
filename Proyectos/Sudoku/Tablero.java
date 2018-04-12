@@ -50,30 +50,6 @@ public class Tablero {
 		}
 	}
 
-	private static boolean validarSudoku(Casilla[][] sudoku) {
-		for (int a = 0; a < sudoku.length; a++) {
-			for (int b = 0; b < sudoku.length; b++) {
-				for (int e = 0; e < sudoku.length; e++) {
-					if (sudoku[a][b].getNumero() == sudoku[a][e].getNumero() && e != b) {
-						return true;
-					}
-					if (sudoku[a][b].getNumero() == sudoku[e][b].getNumero() && e != a) {
-						return true;
-					}
-				}
-				for (int i = 0; i < sudoku.length; i++) {
-					for (int j = 0; j < sudoku.length; j++) {
-						if (sudoku[a][b].getNumero() == sudoku[i][j].getNumero()
-								&& sudoku[a][b].getArea() == sudoku[i][j].getArea() && i != a && j != b) {
-							return true;
-						}
-					}
-				}
-			}
-		}
-		return false;
-	}
-
 	private void asiganarNumeros(Casilla[][] sudoku) {
 		boolean salir = false;
 		int[] numeros = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };

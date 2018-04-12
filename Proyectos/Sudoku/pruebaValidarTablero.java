@@ -14,6 +14,29 @@ public class pruebaValidarTablero {
 									{3,5,1,8,7,9,6,2,4}};
 		System.out.println(validarTablero(sudoku));
 	}
+	private static boolean validarSudoku(Casilla[][] sudoku) {
+		for (int a = 0; a < sudoku.length; a++) {
+			for (int b = 0; b < sudoku.length; b++) {
+				for (int e = 0; e < sudoku.length; e++) {
+					if (sudoku[a][b].getNumero() == sudoku[a][e].getNumero() && e != b) {
+						return true;
+					}
+					if (sudoku[a][b].getNumero() == sudoku[e][b].getNumero() && e != a) {
+						return true;
+					}
+				}
+				for (int i = 0; i < sudoku.length; i++) {
+					for (int j = 0; j < sudoku.length; j++) {
+						if (sudoku[a][b].getNumero() == sudoku[i][j].getNumero()
+								&& sudoku[a][b].getArea() == sudoku[i][j].getArea() && i != a && j != b) {
+							return true;
+						}
+					}
+				}
+			}
+		}
+		return false;
+	}
 	private static boolean validarTablero(int[][] array) {
 		for (int a = 0; a < array.length; a++) {
 			for (int b = 0; b < array.length; b++) {
