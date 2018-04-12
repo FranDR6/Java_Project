@@ -21,9 +21,9 @@ public class Tablero {
 		}
 		do {
 			asiganarNumeros(this.sudoku);
-			mostrarSudoku(sudoku);
-			System.out.println("---------------------------------------------");
+//			System.out.println("---------------------------------------------");
 		} while (comprobarCero(sudoku) == true);
+		mostrarSudoku(sudoku);
 
 	}
 
