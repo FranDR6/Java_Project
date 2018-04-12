@@ -16,9 +16,9 @@ public class Principal {
 		}
 		do {
 			desordenarSudoku(sudoku);
-			mostrarSudoku(sudoku);
-			System.out.println("---------------------------------------------");
 		} while (validarSudoku(sudoku) == true);
+		mostrarSudoku(sudoku);
+		System.out.println("▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀");
 	}
 	// ---------------------------------------------------------------------------------------------//
 

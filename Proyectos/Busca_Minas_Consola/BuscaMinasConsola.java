@@ -29,7 +29,7 @@ public class BuscaMinasConsola {
 				GameOver = true;
 			for (int i = 0; i < tableroVisible.length; i++) {
 				for (int j = 0; j < tableroVisible.length; j++) {
-					if (tableroVisible[i][j] == "▀" && tablero[i + 1][j + 1] != -1) {
+					if (tableroVisible[i][j] == "â–€" && tablero[i + 1][j + 1] != -1) {
 						Win = false;
 					}
 				}
@@ -97,7 +97,7 @@ public class BuscaMinasConsola {
 		}
 		for (int i = 0; i < tableroVisible.length; i++) {
 			for (int j = 0; j < tableroVisible.length; j++) {
-				// Alt+223 = ▀ .. Alt+10 = ◙
+				// Alt+223 = â–€ .. Alt+10 = â—™
 				tableroVisible[i][j] = "▀";
 			}
 		}
@@ -106,7 +106,7 @@ public class BuscaMinasConsola {
 	private static void desvelarCasillas(int[][] tablero, int a, int b, String[][] tableroVisible) {
 		if (tablero[a][b] == 0) {
 			tablero[a][b] = 20;
-			// Alt+1 = ☺
+			// Alt+1 = â˜º
 			tableroVisible[a - 1][b - 1] = "☺";
 			for (int i = a - 1; i < a + 2; i++) {
 				for (int j = b - 1; j < b + 2; j++) {
