@@ -1,4 +1,4 @@
-package Sudoku;
+package GeneradorSudoku;
 
 public class Casilla {
 	private int numero;

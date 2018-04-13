@@ -1,4 +1,4 @@
-package Sudoku;
+package GeneradorSudoku;
 
 public class Tablero {
 	private Casilla[][] sudoku = new Casilla[9][9];
@@ -21,7 +21,6 @@ public class Tablero {
 		}
 		do {
 			asiganarNumeros(this.sudoku);
-//			System.out.println("---------------------------------------------");
 		} while (comprobarCero(sudoku) == true);
 		mostrarSudoku(sudoku);
 
